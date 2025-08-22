@@ -1,79 +1,232 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kokon Cars — wypożyczalnia</title>
-
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokon Cars | Wypożyczalnia Samochodów</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <!-- NAV / HERO -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Kokon Cars</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#offer">Oferta</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <header class="bg-dark text-white py-5">
-    <div class="container text-center">
-      <h1>Kokon Cars</h1>
-      <p class="lead">Wypożyczalnia samochodów — tel: <a class="text-white" href="tel:600000000">600 000 000</a></p>
-      <a class="btn btn-primary" href="#offer">Zobacz auta</a>
-    </div>
-  </header>
 
-  <!-- OFFER -->
-  <section id="offer" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Nasze samochody</h2>
-      <div id="carsGrid" class="row g-4">
-        <!-- Karty aut będą wygenerowane przez js/main.js -->
-      </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container">
-      <h2>Kontakt</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <p>Tel: <a href="tel:600000000">600 000 000</a></p>
-          <p>E-mail: <a href="mailto:kontakt@kokon-cars.pl">kontakt@kokon-cars.pl</a></p>
-          <iframe src="https://www.google.com/maps?q=Krakow&output=embed" style="width:100%;height:250px;border:0;"></iframe>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8 hero-content">
+                    <div class="logo-container">
+                        <i class="fas fa-bus logo-icon"></i>
+                        <h1 class="company-name">Kokon Cars</h1>
+                    </div>
+                    <h2 class="hero-title">Wypożyczalnia samochodów.</h2>
+                    <p>Nowoczesne busy 8 i 9-osobowe dla Twojej grupy. Bezpieczeństwo, komfort i niezawodność w jednym.</p>
+                    <a href="#fleet" class="btn btn-hero btn-lg">Zobacz naszą flotę</a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-          <!-- Formspree: action -> replace with Twój endpoint -->
-          <form action="https://formspree.io/f/xxxxxxxx" method="POST">
-            <input type="text" name="name" placeholder="Imię" class="form-control mb-2" required>
-            <input type="email" name="_replyto" placeholder="E-mail" class="form-control mb-2" required>
-            <textarea name="message" placeholder="Wiadomość" class="form-control mb-2"></textarea>
-            <button class="btn btn-primary" type="submit">Wyślij</button>
-          </form>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title fade-in-left">
+                <h2>O naszej firmie</h2>
+                <p>Od 10 lat świadczymy usługi wypożyczenia busów najwyższej jakości</p>
+            </div>
+            <div class="row about-content fade-in-right">
+                <div class="col-lg-6 about-text">
+                    <h3>Dlaczego warto wybrać Kokon Cars?</h3>
+                    <p>Jesteśmy liderem na rynku wypożyczania busów osobowych. Nasza flota składa się z nowoczesnych, regularnie serwisowanych pojazdów, które zapewniają maksymalny komfort i bezpieczeństwo podróży.</p>
+                    <p>Obsługujemy zarówno klientów indywidualnych, jak i firmy. Nasze busy to idealne rozwiązanie na wyjazdy grupowe, imprezy rodzinne, wyjazdy firmowe czy transport gości weselnych.</p>
+                    
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Pełne ubezpieczenie AC i OC</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tools"></i>
+                        <span>Regularne przeglądy techniczne</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Dostępność 24/7</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <span>Profesjonalny support</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 about-image">
+                    <img src="img/firma.webp" alt="Nasza firma">
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="py-3 text-center">
-    <div class="container">© Kokon Cars</div>
-  </footer>
+    <!-- Fleet Section -->
+    <section id="fleet" class="fleet">
+        <div class="container">
+            <div class="section-title fade-in-right">
+                <h2>Nasza flota</h2>
+                <p>Wybierz idealny pojazd dla swojej grupy</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 fade-in-left">
+                    <div class="car-card">
+                        <div class="car-image">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="car-info">
+                            <h4>Mercedes Sprinter 8+1</h4>
+                            <ul class="car-features">
+                                <li><span>Miejsca</span> <strong>8 pasażerów</strong></li>
+                                <li><span>Klimatyzacja</span> <strong>TAK</strong></li>
+                                <li><span>Bagażnik</span> <strong>Duży</strong></li>
+                                <li><span>Rok produkcji</span> <strong>2022</strong></li>
+                            </ul>
+                            <div class="price">180 zł/doba</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in-right">
+                    <div class="car-card">
+                        <div class="car-image">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="car-info">
+                            <h4>Ford Transit 9+1</h4>
+                            <ul class="car-features">
+                                <li><span>Miejsca</span> <strong>9 pasażerów</strong></li>
+                                <li><span>Klimatyzacja</span> <strong>TAK</strong></li>
+                                <li><span>Bagażnik</span> <strong>Bardzo duży</strong></li>
+                                <li><span>Rok produkcji</span> <strong>2023</strong></li>
+                            </ul>
+                            <div class="price">200 zł/doba</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in-left">
+                    <div class="car-card">
+                        <div class="car-image">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="car-info">
+                            <h4>Volkswagen Crafter 9+1</h4>
+                            <ul class="car-features">
+                                <li><span>Miejsca</span> <strong>9 pasażerów</strong></li>
+                                <li><span>Klimatyzacja</span> <strong>TAK</strong></li>
+                                <li><span>GPS</span> <strong>TAK</strong></li>
+                                <li><span>Rok produkcji</span> <strong>2023</strong></li>
+                            </ul>
+                            <div class="price">220 zł/doba</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Bootstrap JS bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <div class="section-title fade-in-left">
+                <h2>Nasza lokalizacja</h2>
+                <p>Znajdź nas na Lwowskiej w Przemyślu!</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 fade-in-right">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2576.176927116504!2d22.814464412752006!3d49.78273767135343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473b79b5247029bd%3A0xa8ef3447a0051818!2s%22Kokon%22%20Hurtownia%20Fryzjerska!5e0!3m2!1spl!2spl!4v1755893566505!5m2!1spl!2spl" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in-left">
+                    <div class="contact-info" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 400px;">
+                        <h4 style="margin-bottom: 1.5rem; color: #333;">Dane kontaktowe</h4>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #667eea; margin-right: 1rem;"></i>
+                            <span>ul. Lwowska 62 lokal K2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37-700 Przemyśl</span>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-phone" style="color: #667eea; margin-right: 1rem;"></i>
+                            <span>+48 502 212 479</span>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-envelope" style="color: #667eea; margin-right: 1rem;"></i>
+                            <span>kokon2012ua@wp.pl</span>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-clock" style="color: #667eea; margin-right: 1rem;"></i>
+                            <span>Poniedziałek-Piątek: 8:00-16:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title fade-in-right">
+                <h2>Skontaktuj się z nami</h2>
+                <p>Wyślij zapytanie o dostępność i cenę</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 fade-in-left">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Imię i nazwisko" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="Telefon">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Termin wypożyczenia">
+                            </div>
+                        </div>
+                        <textarea class="form-control" rows="5" placeholder="Wiadomość..." required></textarea>
+                        <button type="submit" class="btn btn-contact">
+                            <i class="fas fa-paper-plane me-2"></i>Wyślij zapytanie
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kokon Cars | <a href="https://kokon-hurt.pl" target="_blank">Kokon - Hurtownia Fryzjerska</a> | Strona wykonana przez: <strong>Hubert Jucha</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
