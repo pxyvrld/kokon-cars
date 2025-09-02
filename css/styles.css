@@ -17,7 +17,7 @@ html {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8B1538 0%, #B91E4A 100%);
     color: white;
     padding: 100px 0;
     position: relative;
@@ -52,9 +52,15 @@ html {
     animation: fadeInUp 1s ease;
 }
 
-.logo-icon {
-    font-size: 4rem;
-    color: white;
+.logo-image {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
 }
 
 .company-name {
@@ -219,7 +225,7 @@ section {
 }
 
 .feature i {
-    color: #667eea;
+    color: #8B1538;
     font-size: 1.3rem;
     margin-right: 1rem;
 }
@@ -256,12 +262,19 @@ section {
 
 .car-image {
     height: 250px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.car-image:hover img {
+    transform: scale(1.1);
 }
 
 .car-info {
@@ -294,7 +307,7 @@ section {
 .price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #667eea;
+    color: #8B1538;
     text-align: center;
 }
 
@@ -312,7 +325,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8B1538 0%, #B91E4A 100%);
     color: white;
 }
 
@@ -378,13 +391,13 @@ section {
 }
 
 .footer-bottom a {
-    color: #667eea;
+    color: #8B1538;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-bottom a:hover {
-    color: #764ba2;
+    color: #B91E4A;
 }
 
 /* Responsive */
@@ -396,6 +409,10 @@ section {
     
     .logo-icon {
         font-size: 3rem;
+    }
+
+    .logo-image {
+        height: 60px;
     }
     
     .company-name {
@@ -417,6 +434,7 @@ section {
     .contact-form {
         padding: 2rem;
     }
+
 }
 
 /* Scroll to top button */
@@ -424,7 +442,7 @@ section {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #667eea;
+    background: #8B1538;
     color: white;
     border: none;
     border-radius: 50%;
@@ -444,6 +462,6 @@ section {
 }
 
 .scroll-top:hover {
-    background: #764ba2;
+    background: #B91E4A;
     transform: translateY(-3px);
 }
