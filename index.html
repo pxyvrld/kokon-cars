@@ -11,11 +11,44 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) - ŁADUJE SIĘ TYLKO PO ZGODZIE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" id="gtag-script" style="display:none;"></script>
+    <script id="gtag-init" style="display:none;">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
-
-
-
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <button class="hamburger-btn" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+        <nav class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-content">
+                <button class="close-btn" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="mobile-nav-links">
+                    <li><a href="#home">Start</a></li>
+                    <li><a href="#about">O nas</a></li>
+                    <li><a href="#fleet">Flota</a></li>
+                    <li><a href="#location">Lokalizacja</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+                <div class="mobile-nav-footer">
+                    <p><i class="fas fa-phone"></i> +48 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@kokoncar.pl</p>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -243,6 +276,24 @@
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4><i class="fas fa-cookie-bite"></i> Używamy plików cookie</h4>
+                <p>Ta strona używa plików cookie i Google Analytics, aby zapewnić najlepsze doświadczenia. Kontynuując przeglądanie, wyrażasz zgodę na ich użycie.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="btn-accept">
+                    <i class="fas fa-check"></i> Akceptuję
+                </button>
+                <button id="declineCookies" class="btn-decline">
+                    <i class="fas fa-times"></i> Odrzuć
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

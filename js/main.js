@@ -88,3 +88,99 @@ window.addEventListener('scroll', function() {
         hero.style.transform = `translateY(${rate}px)`;
     }
 });
+
+// Cookie Consent & Google Analytics
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+    
+    // Sprawdź czy użytkownik już wybrał
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    
+    if (!cookieConsent) {
+        // Pokaż banner po 1 sekundzie
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    } else if (cookieConsent === 'accepted') {
+        // Załaduj Google Analytics
+        loadGoogleAnalytics();
+    }
+    
+    // Akceptacja cookies
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        cookieBanner.classList.remove('show');
+        loadGoogleAnalytics();
+        
+        // Animacja zniknięcia
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 400);
+    });
+    
+    // Odrzucenie cookies
+    declineBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'declined');
+        cookieBanner.classList.remove('show');
+        
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 400);
+    });
+});
+
+// Funkcja ładująca Google Analytics
+function loadGoogleAnalytics() {
+    // Pokaż script tag
+    const gtagScript = document.getElementById('gtag-script');
+    const gtagInit = document.getElementById('gtag-init');
+    
+    if (gtagScript && gtagInit) {
+        gtagScript.style.display = 'block';
+        gtagInit.style.display = 'block';
+        
+        // Wykonaj kod inicjalizujący
+        eval(gtagInit.innerHTML);
+        
+        console.log('Google Analytics załadowane!');
+    }
+}
+
+// Hamburger Menu
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeBtn = document.getElementById('closeBtn');
+    
+    // Utwórz overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-nav-overlay';
+    overlay.id = 'mobileNavOverlay';
+    document.body.appendChild(overlay);
+    
+    // Otwórz menu
+    hamburgerBtn.addEventListener('click', function() {
+        hamburgerBtn.classList.add('active');
+        mobileNav.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Zamknij menu
+    function closeMenu() {
+        hamburgerBtn.classList.remove('active');
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    
+    // Zamknij po kliknięciu w link
+    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+});
