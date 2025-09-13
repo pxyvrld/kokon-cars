@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kokon Cars | Wypożyczalnia Samochodów</title>
-    <link rel="icon" href="/img/icon-svg.svg" type="image/svg+xml">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-png.png">
-    <link rel="apple-touch-icon" href="/img/icon-png.png">
+    <link rel="icon" href="./img/icon-svg.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icon-png.png">
+    <link rel="apple-touch-icon" href="./img/icon-png.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -203,23 +203,14 @@
                     </div>
                 </div>
                 <div class="col-lg-4 fade-in-left">
-                    <div class="contact-info" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 400px;">
-                        <h4 style="margin-bottom: 1.5rem; color: #333;">Dane kontaktowe</h4>
-                        <div style="margin-bottom: 1rem;">
-                            <i class="fas fa-map-marker-alt" style="color: #667eea; margin-right: 1rem;"></i>
-                            <span>ul. Lwowska 62 lokal K2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37-700 Przemyśl</span>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <i class="fas fa-phone" style="color: #667eea; margin-right: 1rem;"></i>
-                            <span>+48 502 212 479</span>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <i class="fas fa-envelope" style="color: #667eea; margin-right: 1rem;"></i>
-                            <span>kokon2012ua@wp.pl</span>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <i class="fas fa-clock" style="color: #667eea; margin-right: 1rem;"></i>
-                            <span>Poniedziałek-Piątek: 8:00-16:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <div class="address-box">
+                        <h4>Adres</h4>
+                        <div class="address-content">
+                        <i class="fas fa-map-marker-alt"></i>
+                            <div class="address-text">
+                                <p>ul. Lwowska 62 lokal K2</p>
+                                <p>37-700 Przemyśl</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -231,33 +222,60 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title fade-in-right">
-                <h2>Skontaktuj się z nami</h2>
-                <p>Wyślij zapytanie o dostępność i cenę</p>
+                <h2>Zarezerwuj swój bus</h2>
+                <p>Skontaktuj się z nami, aby zarezerwować pojazd</p>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 fade-in-left">
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Imię i nazwisko" required>
+            <div class="row justify-content-center fade-in-left">
+                <div class="col-lg-10">
+                    <div class="contact-options">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
                             </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Email" required>
+                            <h4>Zadzwoń do nas</h4>
+                            <p>Dostępni codziennie 8:00 - 20:00</p>
+                            <a href="tel:+48123456789" class="contact-btn">
+                                <i class="fas fa-phone"></i> +48 123 456 789
+                            </a>
+                        </div>
+                    
+                        <div class="contact-card">
+                            <div class="contact-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h4>Napisz na WhatsApp</h4>
+                            <p>Szybka odpowiedź i rezerwacja online</p>
+                            <a href="https://wa.me/48123456789?text=Cześć! Chciałbym zarezerwować bus." class="contact-btn whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                
+                    <div class="contact-info-box">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h5>Godziny otwarcia</h5>
+                                <p>Pon-Pt: 8:00-20:00<br>Sb-Nd: 9:00-18:00</p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="tel" class="form-control" placeholder="Telefon">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Termin wypożyczenia">
+                    
+                        <div class="info-item">
+                            <i class="fas fa-credit-card"></i>
+                            <div>
+                                <h5>Płatności</h5>
+                                <p>Gotówka, karta, przelew<br>Możliwa przedpłata online</p>
                             </div>
                         </div>
-                        <textarea class="form-control" rows="5" placeholder="Wiadomość..." required></textarea>
-                        <button type="submit" class="btn btn-contact">
-                            <i class="fas fa-paper-plane me-2"></i>Wyślij zapytanie
-                        </button>
-                    </form>
+                    
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h5>Ubezpieczenie</h5>
+                                <p>Pełne AC/OC w cenie<br>Assistance 24/7</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -267,7 +285,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 Kokon Cars | <a href="https://kokon-hurt.pl" target="_blank">Kokon - Hurtownia Fryzjerska</a> | Strona wykonana przez: <strong>Hubert Jucha</strong></p>
+                <p>&copy; 2025 Kokon Cars | <a href="https://kokon-hurt.pl" target="_blank">Kokon - Hurtownia Fryzjerska</a> | <a href="#" id="privacyLinkFooter" class="privacy-link">Polityka prywatności</a> | Strona wykonana przez: <a href=# ><strong>Hubert Jucha</strong></a></p>
             </div>
         </div>
     </footer>
@@ -281,8 +299,8 @@
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <h4><i class="fas fa-cookie-bite"></i> Używamy plików cookie</h4>
-                <p>Ta strona używa plików cookie i Google Analytics, aby zapewnić najlepsze doświadczenia. Kontynuując przeglądanie, wyrażasz zgodę na ich użycie.</p>
+                <h4><i class="fas fa-cookie-bite"></i> Używamy plików cookies</h4>
+                <p>Ta strona używa plików cookies w celu poprawy komfortu użytkowania oraz analizy ruchu za pomocą Google Analytics. Klikając „Akceptuję”, wyrażasz zgodę na przetwarzanie plików cookies. Więcej informacji znajdziesz w naszej <a href="#" id="privacyLinkCookie" class="privacy-link">Polityce prywatności.</a></p>
             </div>
             <div class="cookie-buttons">
                 <button id="acceptCookies" class="btn-accept">
@@ -291,6 +309,52 @@
                 <button id="declineCookies" class="btn-decline">
                     <i class="fas fa-times"></i> Odrzuć
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="privacy-modal">
+        <div class="privacy-modal-content">
+            <div class="privacy-modal-header">
+                <h2><i class="fas fa-shield-alt"></i> Polityka Prywatności</h2>
+                <button class="privacy-close" id="privacyClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="privacy-modal-body">
+                <h3>1. Administrator danych</h3>
+                <p>Administratorem danych osobowych jest Kokon Cars, z siedzibą pod adresem: ul. Przykładowa 123, 00-001 Warszawa, kontakt: info@kokoncar.pl.</p>
+                
+                <h3>2. Zakres zbieranych danych</h3>
+                <p>Nie zbieramy danych za pomocą formularzy. Strona może jednak gromadzić anonimowe dane o ruchu użytkowników w celach analitycznych za pomocą narzędzi takich jak Google Analytics i Google Search Console.</p>
+                
+                <h3>3. Pliki cookies</h3>
+                <p>Strona używa plików cookies do:</p>
+                <ul>
+                    <li>analizy ruchu na stronie</li>
+                    <li>poprawy komfortu korzystania ze strony</li>
+                </ul>
+                <p>Użytkownik może zarządzać ustawieniami cookies w swojej przeglądarce.</p>
+                
+                <h3>4. Cele przetwarzania danych</h3>
+                <p>Dane anonimowe służą wyłącznie do analizy ruchu i poprawy funkcjonowania strony. Dane nie są sprzedawane ani przekazywane osobom trzecim w celach marketingowych.</p>
+                
+                <h3>5. Prawa użytkownika</h3>
+                <p>Każdy użytkownik ma prawo do:</p>
+                <ul>
+                    <li>dostępu do swoich danych</li>
+                    <li>żądania ich usunięcia lub ograniczenia przetwarzania</li>
+                    <li>cofnięcia zgody na pliki cookies (poprzez ustawienia przeglądarki)</li>
+                </ul>
+                
+                <h3>6. Zmiany w polityce prywatności</h3>
+                <p>Polityka prywatności może ulegać zmianom. Aktualna wersja zawsze znajduje się pod linkiem w stopce strony lub w bannerze cookies.</p>
+                
+                <h3>7. Kontakt</h3>
+                <p>W sprawach związanych z prywatnością prosimy o kontakt: info@kokoncar.pl</p>
+                
+                <p class="privacy-date"><strong>Data ostatniej aktualizacji:</strong> 13 września 2024</p>
             </div>
         </div>
     </div>

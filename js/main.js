@@ -184,3 +184,55 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', closeMenu);
     });
 });
+
+// Privacy Policy Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const privacyModal = document.getElementById('privacyModal');
+    const privacyLinkCookie = document.getElementById('privacyLinkCookie');
+    const privacyLinkFooter = document.getElementById('privacyLinkFooter');
+    const privacyClose = document.getElementById('privacyClose');
+    
+    // Otwórz modal
+    function openPrivacyModal(e) {
+        e.preventDefault();
+        privacyModal.classList.add('show');
+        privacyModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Zamknij modal
+    function closePrivacyModal() {
+        privacyModal.classList.remove('show');
+        setTimeout(() => {
+            privacyModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+    
+    // Event listeners
+    if (privacyLinkCookie) {
+        privacyLinkCookie.addEventListener('click', openPrivacyModal);
+    }
+    
+    if (privacyLinkFooter) {
+        privacyLinkFooter.addEventListener('click', openPrivacyModal);
+    }
+    
+    if (privacyClose) {
+        privacyClose.addEventListener('click', closePrivacyModal);
+    }
+    
+    // Zamknij po kliknięciu poza modal
+    privacyModal.addEventListener('click', function(e) {
+        if (e.target === privacyModal) {
+            closePrivacyModal();
+        }
+    });
+    
+    // Zamknij po ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && privacyModal.classList.contains('show')) {
+            closePrivacyModal();
+        }
+    });
+});
