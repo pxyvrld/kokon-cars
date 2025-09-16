@@ -141,6 +141,7 @@ html {
     opacity: 0;
     transform: translateX(-100px);
     transition: all 0.8s ease;
+    overflow-x: hidden;
 }
 
 .fade-in-left.visible {
@@ -152,6 +153,7 @@ html {
     opacity: 0;
     transform: translateX(100px);
     transition: all 0.8s ease;
+    overflow-x: hidden;
 }
 
 .fade-in-right.visible {
@@ -173,6 +175,8 @@ html {
 /* Sections */
 section {
     padding: 100px 0;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 .section-title {
@@ -252,13 +256,28 @@ section {
     background: white;
 }
 
+.fleet .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.fleet .row > [class*="col-"] {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
 .car-card {
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: all 0.3s ease;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
 }
 
 .car-card:hover {
@@ -270,6 +289,7 @@ section {
     height: 250px;
     overflow: hidden;
     position: relative;
+    flex-shrink: 0;
 }
 
 .car-image img {
@@ -285,6 +305,10 @@ section {
 
 .car-info {
     padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
 }
 
 .car-info h4 {
@@ -296,7 +320,9 @@ section {
 
 .car-features {
     list-style: none;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0 0 1.5rem 0;
+    padding: 0;
+    flex: 1;
 }
 
 .car-features li {
@@ -310,11 +336,20 @@ section {
     border-bottom: none;
 }
 
+.car-features li span strong {
+    color: #8B1538;
+    font-weight: 700;
+}
+
 .price {
     font-size: 1.5rem;
     font-weight: 700;
     color: #8B1538;
     text-align: center;
+    margin-top: auto; /* Pcha cenę na sam dół */
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    margin-bottom: 0;
 }
 
 /* Location Section */
@@ -616,6 +651,37 @@ section {
     .hamburger-menu {
         right: 15px;
         top: 15px;
+    }
+}
+
+/* Responsywność dla mniejszych ekranów */
+@media (max-width: 1199px) {
+    .fleet .row > [class*="col-"] {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .fleet .row {
+        align-items: stretch;
+    }
+    
+    .car-info {
+        padding: 1.5rem;
+    }
+    
+    .car-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 575px) {
+    .fleet .row > [class*="col-"] {
+        margin-bottom: 1.5rem;
+    }
+    
+    .car-info {
+        padding: 1rem;
     }
 }
 
