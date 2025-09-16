@@ -36,7 +36,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0,1000V0h1000v1000H0z" fill="none"/><path d="M200,800c100-50,200-100,300-50s200,100,300,50s200-100,200-50v250H0V800z" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat center center;
+    background: url('data:image/svg+xml,<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0,1000V0h1000v1000H0z" fill="none"/><path d="M200,800c100-50,200-100,300-50s200,100,300,50s200-100,200-50v250H0V800z" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat center center;
     background-size: cover;
     pointer-events: none;
 }
