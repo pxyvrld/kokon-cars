@@ -627,9 +627,13 @@ section {
         padding: 2rem 1.5rem;
     }
 
+    .privacy-modal {
+        padding: 10px;
+    }
+    
     .privacy-modal-content {
-        max-width: 95%;
-        margin: 10px;
+        max-height: 95vh;
+        border-radius: 15px;
     }
     
     .privacy-modal-header {
@@ -642,6 +646,7 @@ section {
     
     .privacy-modal-body {
         padding: 1.5rem;
+        max-height: calc(95vh - 100px);
     }
 
     .mobile-nav {
@@ -1087,9 +1092,8 @@ section {
     visibility: visible;
 }
 
-/* Privacy Policy Modal */
+/* Privacy Policy Modal - POPRAWIONE */
 .privacy-modal {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -1098,31 +1102,57 @@ section {
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999;
     backdrop-filter: blur(5px);
+    
+    /* KLUCZOWA POPRAWKA - visibility zamiast display */
     opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.privacy-modal.show {
+    visibility: hidden;
+    transition: all 0.3s ease;
+    
+    /* Flexbox zawsze aktywny */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+}
+
+.privacy-modal.show {
     opacity: 1;
+    visibility: visible;
+}
+
+/* POPRAWKA - dodaj klasę dla animacji zamykania */
+.privacy-modal.hiding {
+    opacity: 0;
+    visibility: visible; /* Zostaw visible podczas animacji */
+    transition: opacity 0.25s ease;
 }
 
 .privacy-modal-content {
     background: white;
     max-width: 800px;
     max-height: 90vh;
+    width: 100%; /* Dodane dla responsywności */
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    transform: scale(0.7);
-    animation: transform 0.3s ease;
+    position: relative; /* Dodane dla lepszego pozycjonowania */
+    
+    /* POPRAWIONA ANIMACJA */
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .privacy-modal.show .privacy-modal-content {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* DODANE - animacja zamykania */
+.privacy-modal.hiding .privacy-modal-content {
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    transition: all 0.25s ease-out;
 }
 
 .privacy-modal-header {
@@ -1132,6 +1162,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0; /* Zapobiega zmniejszaniu headera */
 }
 
 .privacy-modal-header h2 {
@@ -1151,6 +1182,11 @@ section {
     padding: 5px;
     border-radius: 50%;
     transition: all 0.3s ease;
+    width: 35px; /* Dodane dla lepszego klikania */
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .privacy-close:hover {
@@ -1163,6 +1199,7 @@ section {
     max-height: calc(90vh - 120px);
     overflow-y: auto;
     line-height: 1.6;
+    flex: 1; /* Dodane dla flexbox */
 }
 
 .privacy-modal-body h3 {
@@ -1226,4 +1263,8 @@ section {
     .hamburger-menu {
         display: none;
     }
+}
+
+.privacy-modal:not(.show):not(.hiding) {
+    pointer-events: none;
 }
