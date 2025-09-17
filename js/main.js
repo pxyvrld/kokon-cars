@@ -46,17 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Form submission
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-        });
-    }
-});
-
 // Add interactive hover effects for car cards
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.car-card').forEach(card => {

@@ -103,75 +103,6 @@ html {
     box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.fade-in-left {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: all 0.8s ease;
-    overflow-x: hidden;
-}
-
-.fade-in-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.fade-in-right {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 0.8s ease;
-    overflow-x: hidden;
-}
-
-.fade-in-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Sections */
 section {
     padding: 100px 0;
@@ -410,7 +341,7 @@ section {
     font-weight: 600;
 }
 
-/* Contact Section - New Style */
+/* Contact Section */
 .contact {
     background: linear-gradient(135deg, #8B1538 0%, #B91E4A 100%);
     color: white;
@@ -567,129 +498,6 @@ section {
     color: #B91E4A;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .logo-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .logo-image {
-        height: 200px;
-    }
-    
-    .company-name {
-        font-size: 2rem;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .section-title h2 {
-        font-size: 2rem;
-    }
-
-    .address-box {
-        height: auto;
-        min-height: 250px;
-        padding: 1.5rem;
-        margin-top: 2rem;
-    }
-    
-    .address-content i {
-        font-size: 2.5rem;
-    }
-    
-    .address-box h4 {
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .address-text p {
-        font-size: 1rem;
-    }
-
-    .contact-options {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-info-box {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .contact-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .privacy-modal {
-        padding: 10px;
-    }
-    
-    .privacy-modal-content {
-        max-height: 95vh;
-        border-radius: 15px;
-    }
-    
-    .privacy-modal-header {
-        padding: 1.5rem;
-    }
-    
-    .privacy-modal-header h2 {
-        font-size: 1.2rem;
-    }
-    
-    .privacy-modal-body {
-        padding: 1.5rem;
-        max-height: calc(95vh - 100px);
-    }
-
-    .mobile-nav {
-        width: 100vw; /* Pełna szerokość na bardzo małych ekranach */
-    }
-    
-    .hamburger-menu {
-        right: 15px;
-        top: 15px;
-    }
-}
-
-/* Responsywność dla mniejszych ekranów */
-@media (max-width: 1199px) {
-    .fleet .row > [class*="col-"] {
-        margin-bottom: 2rem;
-    }
-}
-
-@media (max-width: 991px) {
-    .fleet .row {
-        align-items: stretch;
-    }
-    
-    .car-info {
-        padding: 1.5rem;
-    }
-    
-    .car-image {
-        height: 200px;
-    }
-}
-
-@media (max-width: 575px) {
-    .fleet .row > [class*="col-"] {
-        margin-bottom: 1.5rem;
-    }
-    
-    .car-info {
-        padding: 1rem;
-    }
-}
-
 /* Scroll to top button */
 .scroll-top {
     position: fixed;
@@ -719,7 +527,7 @@ section {
     transform: translateY(-3px);
 }
 
-/* Side Card - Poprawiona wersja */
+/* Side Card */
 .cookie-banner {
     position: fixed;
     bottom: 20px;
@@ -940,13 +748,12 @@ section {
     transform: translateY(-2px);
 }
 
-/* Hamburger Menu - POPRAWIONE */
+/* Hamburger Menu */
 .hamburger-menu {
     position: fixed;
-    top: 20px; /* Dodaj margines od góry */
-    right: 20px; /* Dodaj margines od prawej */
+    top: 20px;
+    right: 20px;
     z-index: 10000;
-    /* Usunięte max-height i overflow-y, bo są niepotrzebne dla samego przycisku */
 }
 
 .hamburger-btn {
@@ -990,19 +797,19 @@ section {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Mobile Navigation - POPRAWIONE */
+/* Mobile Navigation */
 .mobile-nav {
     position: fixed;
     top: 0;
     right: 0;
     width: 350px;
     height: 100vh;
-    height: 100dvh; /* Lepsze wsparcie dla mobilnych przeglądarek */
+    height: 100dvh;
     background: linear-gradient(135deg, #8B1538 0%, #B91E4A 100%);
     transform: translateX(100%);
     transition: transform 0.4s ease;
     box-shadow: -5px 0 25px rgba(0,0,0,0.3);
-    overflow-y: auto; /* Dodane dla długich menu */
+    overflow-y: auto;
 }
 
 .mobile-nav.active {
@@ -1011,7 +818,7 @@ section {
 
 .mobile-nav-content {
     padding: 2rem;
-    min-height: 100%; /* Zmienione z height na min-height */
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     color: white;
@@ -1039,8 +846,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 0; /* Dodane resetowanie marginesów */
-    padding: 0; /* Dodane resetowanie paddingu */
+    margin: 0;
+    padding: 0;
 }
 
 .mobile-nav-links a {
@@ -1064,7 +871,7 @@ section {
 .mobile-nav-footer {
     border-top: 1px solid rgba(255,255,255,0.2);
     padding-top: 1.5rem;
-    margin-top: auto; /* Dodane, żeby footer był na dole */
+    margin-top: auto;
 }
 
 .mobile-nav-footer p {
@@ -1092,7 +899,7 @@ section {
     visibility: visible;
 }
 
-/* Privacy Policy Modal - POPRAWIONE */
+/* Privacy Policy Modal */
 .privacy-modal {
     position: fixed;
     top: 0;
@@ -1102,13 +909,9 @@ section {
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999;
     backdrop-filter: blur(5px);
-    
-    /* KLUCZOWA POPRAWKA - visibility zamiast display */
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    
-    /* Flexbox zawsze aktywny */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1120,10 +923,9 @@ section {
     visibility: visible;
 }
 
-/* POPRAWKA - dodaj klasę dla animacji zamykania */
 .privacy-modal.hiding {
     opacity: 0;
-    visibility: visible; /* Zostaw visible podczas animacji */
+    visibility: visible;
     transition: opacity 0.25s ease;
 }
 
@@ -1131,13 +933,11 @@ section {
     background: white;
     max-width: 800px;
     max-height: 90vh;
-    width: 100%; /* Dodane dla responsywności */
+    width: 100%;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    position: relative; /* Dodane dla lepszego pozycjonowania */
-    
-    /* POPRAWIONA ANIMACJA */
+    position: relative;
     transform: scale(0.8) translateY(20px);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1148,7 +948,6 @@ section {
     opacity: 1;
 }
 
-/* DODANE - animacja zamykania */
 .privacy-modal.hiding .privacy-modal-content {
     transform: scale(0.8) translateY(20px);
     opacity: 0;
@@ -1162,7 +961,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: 0; /* Zapobiega zmniejszaniu headera */
+    flex-shrink: 0;
 }
 
 .privacy-modal-header h2 {
@@ -1182,7 +981,7 @@ section {
     padding: 5px;
     border-radius: 50%;
     transition: all 0.3s ease;
-    width: 35px; /* Dodane dla lepszego klikania */
+    width: 35px;
     height: 35px;
     display: flex;
     align-items: center;
@@ -1199,7 +998,7 @@ section {
     max-height: calc(90vh - 120px);
     overflow-y: auto;
     line-height: 1.6;
-    flex: 1; /* Dodane dla flexbox */
+    flex: 1;
 }
 
 .privacy-modal-body h3 {
@@ -1258,13 +1057,197 @@ section {
     text-decoration: none !important;
 }
 
-/* Responsive */
-@media (min-width: 992px) {
-    .hamburger-menu {
-        display: none;
+.privacy-modal:not(.show):not(.hiding) {
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.privacy-modal:not(.show):not(.hiding) {
-    pointer-events: none;
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease;
+    overflow-x: hidden;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease;
+    overflow-x: hidden;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo-image {
+        height: 200px;
+    }
+    
+    .company-name {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .address-box {
+        height: auto;
+        min-height: 250px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .address-content i {
+        font-size: 2.5rem;
+    }
+    
+    .address-box h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .address-text p {
+        font-size: 1rem;
+    }
+
+    .contact-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info-box {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .privacy-modal {
+        padding: 10px;
+    }
+    
+    .privacy-modal-content {
+        max-height: 95vh;
+        border-radius: 15px;
+    }
+    
+    .privacy-modal-header {
+        padding: 1.5rem;
+    }
+    
+    .privacy-modal-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .privacy-modal-body {
+        padding: 1.5rem;
+        max-height: calc(95vh - 100px);
+    }
+
+    .mobile-nav {
+        width: 100vw;
+    }
+    
+    .hamburger-menu {
+        right: 15px;
+        top: 15px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .fleet .row > [class*="col-"] {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .fleet .row {
+        align-items: stretch;
+    }
+    
+    .car-info {
+        padding: 1.5rem;
+    }
+    
+    .car-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 575px) {
+    .fleet .row > [class*="col-"] {
+        margin-bottom: 1.5rem;
+    }
+    
+    .car-info {
+        padding: 1rem;
+    }
 }
