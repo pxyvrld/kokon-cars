@@ -2,11 +2,19 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kokon Cars - wypożyczalnia samochodów i busów 9-osobowych w Przemyślu. Nowoczesne pojazdy, komfort i bezpieczeństwo na każdą okazję.">
-    <meta name="keywords" content="wypożyczalnia samochodów, wypożyczalnia busów, busy 9-osobowe, Przemyśl, wynajem aut, wynajem busów, Kokon Cars, Kokon, kokon hurt, Lexus rx 450h, Renault Kangoo, Skoda Octavia, Renault Traffic, Renault, Lexus, Skoda">
+    <meta name="description" content="Kokon Cars - wypożyczalnia samochodów i busów w Przemyślu. Nowoczesne pojazdy, komfort i bezpieczeństwo.">
+    <meta name="keywords" content="wypożyczalnia samochodów, wypożyczalnia busów, busy 9-osobowe, Przemyśl, wynajem aut, wynajem busów, Kokon Cars, Kokon, kokon hurt, Lexus rx 450h, Renault Kangoo, Skoda Octavia, Renault Traffic">
 
     <title>Kokon Cars | Wypożyczalnia Samochodów | Przemyśl</title>
+
+    <meta property="og:title" content="Kokon Cars | Wypożyczalnia Samochodów | Przemyśl">
+    <meta property="og:description" content="Kokon Cars - wypożyczalnia samochodów i busów w Przemyślu. Nowoczesne pojazdy, komfort i bezpieczeństwo.">
+    <meta property="og:image" content="/img/kokoncarsLogo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kokon-cars.pl">
 
     <link rel="icon" href="/img/icon-svg.svg" type="image/svg+xml">
     <link rel="icon" href="/img/icon-png.png" type="image/png" sizes="32x32">
@@ -16,6 +24,23 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CarRental",
+        "name": "Kokon Cars",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Lwowska 62 lokal K2",
+            "addressLocality": "Przemyśl",
+            "postalCode": "37-700",
+            "addressCountry": "PL"
+        },
+        "telephone": "+48502212479",
+        "email": "kokon2012ua@wp.pl"
+    }
+    </script>
 
     <!-- Google tag (gtag.js) - ŁADUJE SIĘ TYLKO PO ZGODZIE -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTFYMH2EHD" id="gtag-script" style="display:none;"></script>
@@ -30,7 +55,7 @@
 <body>
     <!-- Hamburger Menu -->
     <div class="hamburger-menu">
-        <button class="hamburger-btn" id="hamburgerBtn">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu nawigacji">
             <span></span>
             <span></span>
             <span></span>
@@ -38,7 +63,7 @@
     
         <nav class="mobile-nav" id="mobileNav">
             <div class="mobile-nav-content">
-                <button class="close-btn" id="closeBtn">
+                <button class="close-btn" id="closeBtn" aria-label="Zamknij menu">
                     <i class="fas fa-times"></i>
                 </button>
                 <ul class="mobile-nav-links">
@@ -64,7 +89,7 @@
                     <div class="logo-container">
                         <img src="img/kokoncarsLogo.png" alt="Kokon Cars Logo" class="logo-image">
                     </div>
-                    <h2 class="hero-title">Wypożyczalnia samochodów.</h2>
+                    <h1 class="hero-title">Wypożyczalnia samochodów.</h1>
                     <p>Nowoczesne busy i samochody dla Twojej grupy. Bezpieczeństwo, komfort i niezawodność w jednym.</p>
                     <a href="#fleet" class="btn btn-hero btn-lg">Zobacz naszą flotę</a>
                 </div>
@@ -103,7 +128,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 about-image">
-                    <img src="img/firma.webp" alt="Nasza firma">
+                    <img src="img/firma.webp" alt="Nasza firma" loading="lazy">
                 </div>
             </div>
         </div>
@@ -120,7 +145,7 @@
                 <div class="col-lg-6 col-xl-3 fade-in-left">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/lexus.png" alt="Lexus rx450">
+                            <img src="img/lexus.png" alt="Lexus RX450h" loading="lazy">
                         </div>
                         <div class="car-info">
                             <h4>Lexus RX 450h</h4>
@@ -129,7 +154,7 @@
                                 <li><span>Skrzynia</span> <strong>Automat</strong></li>
                                 <li><span>Bagażnik</span> <strong>Duży</strong></li>
                                 <li><span>Rok produkcji</span> <strong>2022</strong></li>
-                                <li><span>Paliwo</span> <strong>Benzyna + Gaz</strong></li>
+                                <li><span>Paliwo</span> <strong>Benzyna</strong></li>
                                 <li><span><strong>Idealny na wesela lub spotkania firmowe!</strong></span></li>
                             </ul>
                             <div class="price">500 zł/doba (Netto)</div>
@@ -139,7 +164,7 @@
                 <div class="col-lg-6 col-xl-3 fade-in-right">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/trafic.png" alt="Renault Trafic">
+                            <img src="img/trafic.png" alt="Renault Traffic" loading="lazy">
                         </div>
                         <div class="car-info">
                             <h4>Renault Traffic 8+1</h4>
@@ -158,7 +183,7 @@
                 <div class="col-lg-6 col-xl-3 fade-in-left">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/skoda.jpg" alt="skoda">
+                            <img src="img/skoda.jpg" alt="Skoda Octavia" loading="lazy">
                         </div>
                         <div class="car-info">
                             <h4>Skoda Octavia</h4>
@@ -177,24 +202,24 @@
                 <div class="col-lg-6 col-xl-3 fade-in-right">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/kangoo.jpg" alt="Renault Traffic 9+1">
+                            <img src="img/kangoo.jpg" alt="Renault Kangoo" loading="lazy">
                         </div>
-                    <div class="car-info">
-                        <h4>Renault Kangoo</h4>
-                        <ul class="car-features">
-                            <li><span>Miejsca</span> <strong>2 pasażerów</strong></li>
-                            <li><span>Skrzynia</span> <strong>Manualna</strong></li>
-                            <li><span>Wymiary Paki</span> <strong>Maxi</strong></li>
-                            <li><span>Rok produkcji</span> <strong>2018</strong></li>
-                            <li><span>Paliwo</span> <strong>Diesel</strong></li>
-                            <li><span><strong>Możliwość wypożyczenia na godziny!</strong></span></li>
-                        </ul>
-                        <div class="price">? zł/doba (Netto)</div>
+                        <div class="car-info">
+                            <h4>Renault Kangoo</h4>
+                            <ul class="car-features">
+                                <li><span>Miejsca</span> <strong>2 pasażerów</strong></li>
+                                <li><span>Skrzynia</span> <strong>Manualna</strong></li>
+                                <li><span>Wymiary Paki</span> <strong>Maxi</strong></li>
+                                <li><span>Rok produkcji</span> <strong>2018</strong></li>
+                                <li><span>Paliwo</span> <strong>Diesel</strong></li>
+                                <li><span><strong>Możliwość wypożyczenia na godziny!</strong></span></li>
+                            </ul>
+                            <div class="price">? zł/doba (Netto)</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
 
     <!-- Location Section -->
@@ -208,6 +233,7 @@
                 <div class="col-lg-8 fade-in-right">
                     <div class="map-container">
                         <iframe 
+                            title="Mapa dojazdu do Kokon Cars w Przemyślu"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2576.176927116504!2d22.814464412752006!3d49.78273767135343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473b79b5247029bd%3A0xa8ef3447a0051818!2s%22Kokon%22%20Hurtownia%20Fryzjerska!5e0!3m2!1spl!2spl!4v1755893566505!5m2!1spl!2spl" 
                             width="100%" 
                             height="400" 
@@ -303,7 +329,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 Kokon Cars | <a href="https://kokon-hurt.pl" target="_blank">Kokon - Hurtownia Fryzjerska</a> | <a href="#" id="privacyLinkFooter" class="privacy-link">Polityka prywatności</a> | Strona wykonana przez: <a href=# ><strong>Hubert Jucha</strong></a></p>
+                <p>&copy; 2025 Kokon Cars | <a href="https://kokon-hurt.pl" target="_blank">Kokon - Hurtownia Fryzjerska</a> | <a href="#" id="privacyLinkFooter" class="privacy-link">Polityka prywatności</a> | Strona wykonana przez: <a href=https://github.com/pxyvrld target="_blank" ><strong>Hubert Jucha</strong></a></p>
             </div>
         </div>
     </footer>
