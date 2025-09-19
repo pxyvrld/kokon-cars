@@ -17,6 +17,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.container, .row, [class*="col-"] {
+    overflow: visible !important;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #8B1538 0%, #B91E4A 100%);
@@ -191,16 +195,18 @@ section {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    overflow: visible;
 }
 
 .fleet .row > [class*="col-"] {
     display: flex;
     margin-bottom: 2rem;
+    overflow: visible;
 }
 
 .car-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: all 0.3s ease;
@@ -209,11 +215,13 @@ section {
     width: 100%;
     height: 100%;
     max-width: 100%;
+    margin: 0 0 15px 0;
 }
 
 .car-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    z-index: 10;
 }
 
 .car-image {
@@ -231,7 +239,7 @@ section {
 }
 
 .car-image:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .car-info {
@@ -1065,6 +1073,10 @@ section {
         font-size: 2rem;
     }
 
+    .fleet .row > [class*="col-"] {
+        margin-bottom: 4rem;
+    }
+
     .address-box {
         height: auto;
         min-height: 250px;
@@ -1128,6 +1140,16 @@ section {
         right: 15px;
         top: 15px;
     }
+
+    .price {
+        font-size: 1.6rem;
+        padding: 1.5rem;
+        border-bottom:2px solid #8B1538;
+    }
+
+    .car-card:hover {
+        transform: translateY(-5px);
+    }
 }
 
 @media (max-width: 1199px) {
@@ -1152,7 +1174,7 @@ section {
 
 @media (max-width: 575px) {
     .fleet .row > [class*="col-"] {
-        margin-bottom: 1.5rem;
+        margin-bottom: 7rem;
     }
     
     .car-info {
