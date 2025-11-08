@@ -1,81 +1,80 @@
-# 🚗 Kokon Cars - Wypożyczalnia Samochodów
+# 🚗 Kokon Cars - Car Rental Service
 
 [![Live Site](https://img.shields.io/badge/Live-kokon--cars.pl-blue)](https://kokon-cars.pl)
 
-Nowoczesna strona internetowa dla wypożyczalni samochodów i busów w Przemyślu.
+Modern website for a car and van rental company in Przemyśl, Poland.
 
-## 📋 O projekcie
+## 📋 About the project
 
-Kokon Cars to profesjonalna wypożyczalnia oferująca:
-- Busy 8+1 osobowe
-- Samochody osobowe (Lexus RX 450h, Skoda Octavia)
-- Samochody dostawcze (Renault Kangoo)
+Kokon Cars is a professional rental service offering:
+- 8+1 passenger vans
+- Passenger cars (Lexus RX 450h, Skoda Octavia)
+- Commercial vehicles (Renault Kangoo)
 
-### ✨ Funkcjonalności
+### ✨ Features
 
 - 📱 Fully responsive design
-- 🎨 Nowoczesny interfejs użytkownika
+- 🎨 Modern user interface
 - 🍪 GDPR-compliant cookie consent
 - 📊 Google Analytics integration
 - 🗺️ Google Maps integration
 - 💬 WhatsApp quick contact
-- 🚀 Optymalizacja SEO
+- 🚀 SEO optimization
 
-## 🛠️ Technologie
+## 🛠️ Technologies
 
-- **HTML5** - Semantyczny markup
+- **HTML5** - Semantic markup
 - **CSS3** - Custom styles + animations
 - **JavaScript (ES6+)** - Vanilla JS
-- **Bootstrap 5.3.0** - Framework CSS
-- **Font Awesome 6.0.0** - Ikony
-- **Google Fonts (Poppins)** - Typografia
+- **Bootstrap 5.3.0** - CSS Framework
+- **Font Awesome 6.0.0** - Icons
+- **Google Fonts (Poppins)** - Typography
 
-## 📂 Struktura projektu
+## 📂 Project structure
 
 ```
 kokon-cars/
-├── index.html          # Główny plik HTML
+├── index.html          # Main HTML file
 ├── css/
-│   └── styles.css     # Style CSS
+│   └── styles.css     # CSS styles
 ├── js/
-│   └── main.js        # Logika JavaScript
-├── img/               # Obrazy i grafiki
-├── sitemap.xml        # Mapa strony
-└── CNAME             # Konfiguracja domeny
+│   └── main.js        # JavaScript logic
+├── img/               # Images and graphics
+├── sitemap.xml        # Sitemap
+└── CNAME             # Domain configuration
 ```
 
-## 📱 Responsywność
+## 📱 Responsiveness
 
-Strona jest w pełni responsywna i działa na:
-- 📱 Urządzeniach mobilnych (320px+)
-- 📱 Tabletach (768px+)
-- 💻 Desktopach (1024px+)
-- 🖥️ Dużych ekranach (1920px+)
+The site is fully responsive and works on:
+- 📱 Mobile devices (320px+)
+- 📱 Tablets (768px+)
+- 💻 Desktops (1024px+)
+- 🖥️ Large screens (1920px+)
 
 ## 🔍 SEO
 
-Projekt zawiera:
+The project includes:
 - ✅ Meta tags (description, keywords)
 - ✅ Open Graph protocol
 - ✅ Schema.org markup (CarRental)
 - ✅ Sitemap.xml
 - ✅ Semantic HTML5
-- ✅ Alt tags dla obrazów
+- ✅ Alt tags for images
 - ✅ Lazy loading
 
-## 📞 Kontakt
+## 📞 Contact
 
 - **Email**: kokon2012ua@wp.pl
-- **Telefon**: +48 502 212 479
-- **WhatsApp**: [Napisz wiadomość](https://wa.me/48502212479)
-- **Adres**: ul. Lwowska 62 lok.K2, 37-700 Przemyśl
+- **Phone**: +48 502 212 479
+- **WhatsApp**: [Send message](https://wa.me/48502212479)
+- **Address**: ul. Lwowska 62 lok.K2, 37-700 Przemyśl, Poland
 
-## 📄 Licencja
+## 📄 License
 
-© 2025 Kokon Cars. Wszelkie prawa zastrzeżone.
+© 2025 Kokon Cars. All rights reserved.
 
 ---
 
-**Autor**: [@pxyvrld](https://github.com/pxyvrld)  
-**Data aktualizacji**: Listopad 2025
-```
+**Author**: [@pxyvrld](https://github.com/pxyvrld)  
+**Last updated**: November 2025
