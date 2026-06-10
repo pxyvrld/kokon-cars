@@ -16,9 +16,10 @@ Kokon Cars is a professional rental service offering:
 - 📱 Fully responsive design
 - 🎨 Modern user interface
 - 🍪 GDPR-compliant cookie consent
-- 📊 Google Analytics integration
+- 📊 Google Analytics integration (loaded only after consent)
 - 🗺️ Google Maps integration
 - 💬 WhatsApp quick contact
+- ♿ Accessibility (ARIA roles & labels)
 - 🚀 SEO optimization
 
 ## 🛠️ Technologies
@@ -41,6 +42,7 @@ kokon-cars/
 │   └── main.js        # JavaScript logic
 ├── img/               # Images and graphics
 ├── sitemap.xml        # Sitemap
+├── robots.txt         # Crawler directives
 └── CNAME             # Domain configuration
 ```
 
@@ -55,12 +57,12 @@ The site is fully responsive and works on:
 ## 🔍 SEO
 
 The project includes:
-- ✅ Meta tags (description, keywords)
-- ✅ Open Graph protocol
-- ✅ Schema.org markup (CarRental)
-- ✅ Sitemap.xml
-- ✅ Semantic HTML5
-- ✅ Alt tags for images
+- ✅ Meta tags (description, keywords, canonical)
+- ✅ Open Graph protocol + Twitter Cards
+- ✅ Schema.org markup (AutoRental, with geo & pricing data)
+- ✅ Sitemap.xml & robots.txt
+- ✅ Semantic HTML5 with proper heading hierarchy
+- ✅ Alt tags and width/height for images
 - ✅ Lazy loading
 
 ## 📞 Contact
@@ -77,4 +79,4 @@ The project includes:
 ---
 
 **Author**: [@pxyvrld](https://github.com/pxyvrld)  
-**Last updated**: November 2025
+**Last updated**: June 2026

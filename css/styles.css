@@ -70,13 +70,6 @@ html {
     transform: scale(1.05);
 }
 
-.company-name {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0;
-    color: white;
-}
-
 .hero-title {
     font-size: 2.5rem;
     font-weight: 600;
@@ -219,7 +212,7 @@ section {
 }
 
 .car-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     z-index: 10;
 }
@@ -250,7 +243,7 @@ section {
     word-wrap: break-word;
 }
 
-.car-info h4 {
+.car-info h3 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -317,7 +310,7 @@ section {
     text-align: center;
 }
 
-.address-box h4 {
+.address-box h3 {
     color: #8B1538;
     font-size: 1.5rem;
     font-weight: 600;
@@ -404,7 +397,7 @@ section {
     transform: scale(1.1);
 }
 
-.contact-card h4 {
+.contact-card h3 {
     color: white;
     font-size: 1.4rem;
     font-weight: 600;
@@ -469,7 +462,7 @@ section {
     flex-shrink: 0;
 }
 
-.info-item h5 {
+.info-item h4 {
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
@@ -558,7 +551,7 @@ section {
     padding: 2rem;
 }
 
-.cookie-text h4 {
+.cookie-text h3 {
     color: #8B1538;
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
@@ -568,7 +561,6 @@ section {
 }
 /* Privacy Policy Modal */
 .privacy-modal {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -577,7 +569,6 @@ section {
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999;
     backdrop-filter: blur(5px);
-    animation: fadeIn 0.3s ease;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -603,8 +594,6 @@ section {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    transform: scale(0.7);
-    animation: modalShow 0.3s ease forwards;
     width: 100%;
     position: relative;
     transform: scale(0.8) translateY(20px);
@@ -616,15 +605,6 @@ section {
     opacity: 0;
     visibility: visible;
     transition: opacity 0.25s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes modalShow {
-    to { transform: scale(1); }
 }
 
 .privacy-modal-header {
@@ -719,29 +699,6 @@ section {
     margin-top: 2rem;
 }
 
-.privacy-modal-body h3:first-child {
-    margin-top: 0;
-}
-
-/* Privacy Links */
-.privacy-link {
-    color: rgba(255, 255, 255, 0.9) !important;
-    text-decoration: underline !important;
-    transition: all 0.3s ease;
-}
-
-.privacy-link:hover {
-    color: white !important;
-    text-decoration: none !important;
-}
-
-.footer .privacy-link {
-    color: #8B1538 !important;
-}
-
-.footer .privacy-link:hover {
-    color: #B91E4A !important;
-}
 .cookie-text p {
     color: #666;
     font-size: 0.9rem;
@@ -1057,10 +1014,6 @@ section {
         height: 200px;
     }
     
-    .company-name {
-        font-size: 2rem;
-    }
-    
     .hero-title {
         font-size: 2rem;
     }
@@ -1088,7 +1041,7 @@ section {
         font-size: 2.5rem;
     }
     
-    .address-box h4 {
+    .address-box h3 {
         font-size: 1.3rem;
         margin-bottom: 1.5rem;
     }

@@ -2,22 +2,36 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kokon Cars - wypożyczalnia samochodów i busów w Przemyślu. Nowoczesne pojazdy, komfort i bezpieczeństwo.">
+    <meta name="description" content="Kokon Cars - wypożyczalnia samochodów i busów 8+1 w Przemyślu: Lexus RX, Skoda Octavia, Renault Traffic, Kangoo. Pełne ubezpieczenie, dostępność 24/7.">
     <meta name="keywords" content="wypożyczalnia samochodów, wypożyczalnia busów, busy 9-osobowe, Przemyśl, wynajem aut, wynajem busów, Kokon Cars, Kokon, kokon hurt, Lexus rx 450h, Renault Kangoo, Skoda Octavia, Renault Traffic">
+    <meta name="theme-color" content="#8B1538">
 
     <title>Kokon Cars | Wypożyczalnia Samochodów | Przemyśl</title>
 
     <meta property="og:title" content="Kokon Cars | Wypożyczalnia Samochodów | Przemyśl">
-    <meta property="og:description" content="Kokon Cars - wypożyczalnia samochodów i busów w Przemyślu. Nowoczesne pojazdy, komfort i bezpieczeństwo.">
-    <meta property="og:image" content="/img/kokoncarsLogo.png">
+    <meta property="og:description" content="Kokon Cars - wypożyczalnia samochodów i busów 8+1 w Przemyślu: Lexus RX, Skoda Octavia, Renault Traffic, Kangoo. Pełne ubezpieczenie, dostępność 24/7.">
+    <meta property="og:image" content="https://kokon-cars.pl/img/kokoncarsLogo.png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kokon-cars.pl">
+    <meta property="og:locale" content="pl_PL">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kokon Cars | Wypożyczalnia Samochodów | Przemyśl">
+    <meta name="twitter:description" content="Kokon Cars - wypożyczalnia samochodów i busów 8+1 w Przemyślu: Lexus RX, Skoda Octavia, Renault Traffic, Kangoo. Pełne ubezpieczenie, dostępność 24/7.">
+    <meta name="twitter:image" content="https://kokon-cars.pl/img/kokoncarsLogo.png">
+
+    <link rel="canonical" href="https://kokon-cars.pl/">
 
     <link rel="icon" href="/img/icon-svg.svg" type="image/svg+xml">
     <link rel="icon" href="/img/icon-png.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="/img/icon-png.png">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -27,8 +41,10 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "CarRental",
+        "@type": "AutoRental",
         "name": "Kokon Cars",
+        "url": "https://kokon-cars.pl",
+        "image": "https://kokon-cars.pl/img/kokoncarsLogo.png",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "ul. Lwowska 62 lokal K2",
@@ -36,25 +52,28 @@
             "postalCode": "37-700",
             "addressCountry": "PL"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 49.78273767135343,
+            "longitude": 22.814464412752006
+        },
         "telephone": "+48502212479",
-        "email": "kokon2012ua@wp.pl"
+        "email": "kokon2012ua@wp.pl",
+        "priceRange": "100-500 PLN",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "16:00"
+        }
     }
-    </script>
-
-    <!-- Google tag (gtag.js) - ŁADUJE SIĘ TYLKO PO ZGODZIE -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTFYMH2EHD" id="gtag-script" style="display:none;"></script>
-    <script id="gtag-init" style="display:none;">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XTFYMH2EHD');
     </script>
 </head>
 
 <body>
     <!-- Hamburger Menu -->
     <div class="hamburger-menu">
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu nawigacji">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu nawigacji" aria-expanded="false" aria-controls="mobileNav">
             <span></span>
             <span></span>
             <span></span>
@@ -86,7 +105,7 @@
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8 hero-content">
                     <div class="logo-container">
-                        <img src="img/kokoncarsLogo.png" alt="Kokon Cars Logo" class="logo-image">
+                        <img src="img/kokoncarsLogo.png" alt="Kokon Cars Logo" class="logo-image" width="1920" height="1080">
                     </div>
                     <h1 class="hero-title">Wypożyczalnia samochodów.</h1>
                     <p>Nowoczesne busy i samochody dla Twojej grupy. Bezpieczeństwo, komfort i niezawodność w jednym.</p>
@@ -127,7 +146,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 about-image">
-                    <img src="img/firma.webp" alt="Nasza firma" loading="lazy">
+                    <img src="img/firma.webp" alt="Nasza firma" loading="lazy" width="680" height="510">
                 </div>
             </div>
         </div>
@@ -144,10 +163,10 @@
                 <div class="col-lg-6 col-xl-3 fade-in-left">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/lexus.png" alt="Lexus RX450h" loading="lazy">
+                            <img src="img/lexus.png" alt="Lexus RX450h" loading="lazy" width="700" height="525">
                         </div>
                         <div class="car-info">
-                            <h4>Lexus RX 450h</h4>
+                            <h3>Lexus RX 450h</h3>
                             <ul class="car-features">
                                 <li><span>Miejsca</span> <strong>5 osobowy</strong></li>
                                 <li><span>Skrzynia</span> <strong>Automat</strong></li>
@@ -163,10 +182,10 @@
                 <div class="col-lg-6 col-xl-3 fade-in-right">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/trafic.png" alt="Renault Traffic" loading="lazy">
+                            <img src="img/trafic.png" alt="Renault Traffic" loading="lazy" width="426" height="320">
                         </div>
                         <div class="car-info">
-                            <h4>Renault Traffic 8+1</h4>
+                            <h3>Renault Traffic 8+1</h3>
                             <ul class="car-features">
                                 <li><span>Miejsca</span> <strong>8 pasażerów</strong></li>
                                 <li><span>Skrzynia</span> <strong>Automat</strong></li>
@@ -182,10 +201,10 @@
                 <div class="col-lg-6 col-xl-3 fade-in-left">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/skodaoctavia.png" alt="Skoda Octavia" loading="lazy">
+                            <img src="img/skodaoctavia.png" alt="Skoda Octavia" loading="lazy" width="1275" height="727">
                         </div>
                         <div class="car-info">
-                            <h4>Skoda Octavia</h4>
+                            <h3>Skoda Octavia</h3>
                             <ul class="car-features">
                                 <li><span>Miejsca</span> <strong>5 osobowe</strong></li>
                                 <li><span>Skrzynia</span> <strong>Automat</strong></li>
@@ -201,10 +220,10 @@
                 <div class="col-lg-6 col-xl-3 fade-in-right">
                     <div class="car-card">
                         <div class="car-image">
-                            <img src="img/kangoo.jpg" alt="Renault Kangoo" loading="lazy">
+                            <img src="img/kangoo.jpg" alt="Renault Kangoo" loading="lazy" width="1600" height="1200">
                         </div>
                         <div class="car-info">
-                            <h4>Renault Kangoo</h4>
+                            <h3>Renault Kangoo</h3>
                             <ul class="car-features">
                                 <li><span>Miejsca</span> <strong>2 pasażerów</strong></li>
                                 <li><span>Skrzynia</span> <strong>Manualna</strong></li>
@@ -244,7 +263,7 @@
                 </div>
                 <div class="col-lg-4 fade-in-left">
                     <div class="address-box">
-                        <h4>Adres</h4>
+                        <h3>Adres</h3>
                         <div class="address-content">
                         <i class="fas fa-map-marker-alt"></i>
                             <div class="address-text">
@@ -272,7 +291,7 @@
                             <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <h4>Zadzwoń do nas</h4>
+                            <h3>Zadzwoń do nas</h3>
                             <p>Dostępni codziennie 7:00 - 19:00</p>
                             <a href="tel:+48502212479" class="contact-btn">
                                 <i class="fas fa-phone"></i> +48 502 212 479
@@ -286,9 +305,9 @@
                             <div class="contact-icon whatsapp">
                                 <i class="fab fa-whatsapp"></i>
                             </div>
-                            <h4>Napisz na WhatsApp</h4>
+                            <h3>Napisz na WhatsApp</h3>
                             <p>Szybka odpowiedź i rezerwacja online</p>
-                            <a href="https://wa.me/48502212479?text=Dzień dobry, chciałbym zarezerwować xxx w terminie xxx do xxx" class="contact-btn whatsapp-btn" target="_blank">
+                            <a href="https://wa.me/48502212479?text=Dzień dobry, chciałbym zarezerwować xxx w terminie xxx do xxx" class="contact-btn whatsapp-btn" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-whatsapp"></i> WhatsApp
                             </a>
                         </div>
@@ -298,7 +317,7 @@
                         <div class="info-item">
                             <i class="fas fa-clock"></i>
                             <div>
-                                <h5>Godziny wydawania aut</h5>
+                                <h4>Godziny wydawania aut</h4>
                                 <p>Pon-Pt: 8:00-16:00</p>
                             </div>
                         </div>
@@ -306,7 +325,7 @@
                         <div class="info-item">
                             <i class="fas fa-credit-card"></i>
                             <div>
-                                <h5>Płatności</h5>
+                                <h4>Płatności</h4>
                                 <p>Gotówka, karta, przelew<br>Możliwa przedpłata online</p>
                             </div>
                         </div>
@@ -314,7 +333,7 @@
                         <div class="info-item">
                             <i class="fas fa-shield-alt"></i>
                             <div>
-                                <h5>Ubezpieczenie</h5>
+                                <h4>Ubezpieczenie</h4>
                                 <p>Pełne AC/OC w cenie<br>Assistance 24/7</p>
                             </div>
                         </div>
@@ -328,13 +347,13 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 Kokon Cars | <a href="https://kokon-hurt.pl" target="_blank">Kokon - Hurtownia Fryzjerska</a> | <a href="#" id="privacyLinkFooter" class="privacy-link">Polityka prywatności</a> | Strona wykonana przez: <a href=https://github.com/pxyvrld target="_blank" ><strong>Hubert Jucha</strong></a></p>
+                <p>&copy; 2025 Kokon Cars | <a href="https://kokon-hurt.pl" target="_blank" rel="noopener noreferrer">Kokon - Hurtownia Fryzjerska</a> | <a href="#" id="privacyLinkFooter" class="privacy-link">Polityka prywatności</a> | Strona wykonana przez: <a href="https://github.com/pxyvrld" target="_blank" rel="noopener noreferrer"><strong>Hubert Jucha</strong></a></p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll to top button -->
-    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <button class="scroll-top" aria-label="Przewiń do góry">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -342,7 +361,7 @@
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <h4><i class="fas fa-cookie-bite"></i> Używamy plików cookies</h4>
+                <h3><i class="fas fa-cookie-bite"></i> Używamy plików cookies</h3>
                 <p>Ta strona używa plików cookies w celu poprawy komfortu użytkowania oraz analizy ruchu za pomocą Google Analytics. Klikając „Akceptuję”, wyrażasz zgodę na przetwarzanie plików cookies. Więcej informacji znajdziesz w naszej <a href="#" id="privacyLinkCookie" class="privacy-link">Polityce prywatności.</a></p>
             </div>
             <div class="cookie-buttons">
@@ -357,10 +376,10 @@
     </div>
 
     <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="privacy-modal">
+    <div id="privacyModal" class="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
         <div class="privacy-modal-content">
             <div class="privacy-modal-header">
-                <h2><i class="fas fa-shield-alt"></i> Polityka Prywatności</h2>
+                <h2 id="privacyModalTitle"><i class="fas fa-shield-alt"></i> Polityka Prywatności</h2>
                 <button class="privacy-close" id="privacyClose">
                     <i class="fas fa-times"></i>
                 </button>
