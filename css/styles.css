@@ -127,10 +127,95 @@ section {
 }
 
 /* About Section */
+/* Brands Section */
+.brands {
+    padding: 3rem 0 4rem;
+    background: #fff;
+    overflow: hidden;
+}
+
+.brands .section-title {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+}
+
+.brands .section-title a {
+    color: #8B1538;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.brands .section-title a:hover {
+    text-decoration: underline;
+}
+
+.brands-marquee {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.brands-track {
+    display: flex;
+    width: max-content;
+    animation: brands-scroll 30s linear infinite;
+}
+
+.brands:hover .brands-track {
+    animation-play-state: paused;
+}
+
+.brand-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    padding: 0 3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #999;
+    white-space: nowrap;
+}
+
+.brand-item img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.brand-item img:hover {
+    transform: scale(1.08);
+}
+
+@keyframes brands-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brands-track {
+        animation: none;
+    }
+}
+
+@media (max-width: 575px) {
+    .brand-item {
+        height: 70px;
+        padding: 0 1.5rem;
+        font-size: 1rem;
+    }
+}
+
 .about {
     background: #f8f9fa;
     display: flow-root;
-    padding-top: 0px;
 }
 
 .about-content {
@@ -233,6 +318,33 @@ section {
 
 .car-image:hover img {
     transform: scale(1.05);
+}
+
+.car-image .carousel,
+.car-image .carousel-inner,
+.car-image .carousel-item {
+    height: 100%;
+}
+
+.car-image .carousel-control-prev,
+.car-image .carousel-control-next {
+    width: 15%;
+    opacity: 0.8;
+}
+
+.car-image .carousel-control-prev:hover,
+.car-image .carousel-control-next:hover {
+    opacity: 1;
+}
+
+.car-image .carousel-control-prev-icon,
+.car-image .carousel-control-next-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    padding: 0.4rem;
+    background-size: 60%;
 }
 
 .car-info {
