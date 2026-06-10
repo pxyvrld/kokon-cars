@@ -45,9 +45,8 @@ window.addEventListener('load', function() {
     }, 100);
 });
 
-// Scroll-to-top visibility + parallax effect for hero section (throttled via rAF)
+// Scroll-to-top button visibility (throttled via rAF)
 const scrollTopBtn = document.querySelector('.scroll-top');
-const hero = document.querySelector('.hero');
 let scrollTicking = false;
 
 function handleScroll() {
@@ -55,10 +54,6 @@ function handleScroll() {
 
     if (scrollTopBtn) {
         scrollTopBtn.classList.toggle('visible', scrolled > 300);
-    }
-
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * -0.2}px)`;
     }
 
     scrollTicking = false;
