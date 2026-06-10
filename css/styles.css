@@ -235,6 +235,33 @@ section {
     transform: scale(1.05);
 }
 
+.car-image .carousel,
+.car-image .carousel-inner,
+.car-image .carousel-item {
+    height: 100%;
+}
+
+.car-image .carousel-control-prev,
+.car-image .carousel-control-next {
+    width: 15%;
+    opacity: 0.8;
+}
+
+.car-image .carousel-control-prev:hover,
+.car-image .carousel-control-next:hover {
+    opacity: 1;
+}
+
+.car-image .carousel-control-prev-icon,
+.car-image .carousel-control-next-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    padding: 0.4rem;
+    background-size: 60%;
+}
+
 .car-info {
     padding: 2rem;
     flex: 1;
