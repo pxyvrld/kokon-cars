@@ -222,3 +222,117 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Image Lightbox (podgląd zdjęć aut)
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('imageLightbox');
+    if (!lightbox) return;
+
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    let currentImages = [];
+    let currentIndex = 0;
+    let activeCarousel = null;
+
+    function renderCurrentImage() {
+        const current = currentImages[currentIndex];
+        lightboxImg.src = current.src;
+        lightboxImg.alt = current.alt;
+
+        const hasMultiple = currentImages.length > 1;
+        lightboxPrev.style.display = hasMultiple ? 'flex' : 'none';
+        lightboxNext.style.display = hasMultiple ? 'flex' : 'none';
+        lightboxCounter.textContent = hasMultiple ? `${currentIndex + 1} / ${currentImages.length}` : '';
+    }
+
+    function openLightbox(images, startIndex, carouselEl) {
+        currentImages = images;
+        currentIndex = startIndex;
+        activeCarousel = carouselEl;
+        renderCurrentImage();
+        lightbox.classList.remove('hiding');
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightbox.classList.contains('show')) return;
+
+        // Zostaw karuzelę na zdjęciu, które było ostatnio widoczne w podglądzie
+        if (activeCarousel && window.bootstrap) {
+            const instance = bootstrap.Carousel.getOrCreateInstance(activeCarousel);
+            instance.to(currentIndex);
+        }
+        activeCarousel = null;
+
+        lightbox.classList.remove('show');
+        lightbox.classList.add('hiding');
+        document.body.style.overflow = '';
+
+        setTimeout(() => {
+            lightbox.classList.remove('hiding');
+        }, 300);
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        renderCurrentImage();
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        renderCurrentImage();
+    }
+
+    // Każde zdjęcie auta (pojedyncze lub w karuzeli) otwiera podgląd ze wszystkimi zdjęciami tego auta
+    document.querySelectorAll('.car-image').forEach(function(container) {
+        const imgs = Array.from(container.querySelectorAll('img'));
+        if (!imgs.length) return;
+
+        const carouselEl = container.querySelector('.carousel');
+
+        imgs.forEach(function(img, index) {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation();
+
+                let startIndex = index;
+                if (carouselEl) {
+                    const activeImg = carouselEl.querySelector('.carousel-item.active img');
+                    startIndex = Math.max(imgs.indexOf(activeImg), 0);
+                }
+
+                openLightbox(imgs, startIndex, carouselEl);
+            });
+        });
+    });
+
+    lightboxNext.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showNext();
+    });
+
+    lightboxPrev.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showPrev();
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('show')) return;
+
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+    });
+});
