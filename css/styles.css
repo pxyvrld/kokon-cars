@@ -126,7 +126,6 @@ section {
     margin: 0 auto;
 }
 
-/* About Section */
 /* Brands Section */
 .brands {
     padding: 3rem 0 4rem;
@@ -213,6 +212,7 @@ section {
     }
 }
 
+/* About Section */
 .about {
     background: #f8f9fa;
     display: flow-root;
@@ -391,7 +391,7 @@ section {
     font-weight: 700;
     color: #8B1538;
     text-align: center;
-    margin-top: auto; /* Pcha cenę na sam dół */
+    margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid #eee;
     margin-bottom: 0;

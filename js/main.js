@@ -12,7 +12,6 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe all elements with fade-in classes
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in').forEach(el => {
         observer.observe(el);
@@ -78,33 +77,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const cookieBanner = document.getElementById('cookieBanner');
     const acceptBtn = document.getElementById('acceptCookies');
     const declineBtn = document.getElementById('declineCookies');
-    
-    // Sprawdź czy użytkownik już wybrał
+
     const cookieConsent = localStorage.getItem('cookieConsent');
-    
+
     if (!cookieConsent) {
-        // Pokaż banner po 1 sekundzie
         setTimeout(() => {
             cookieBanner.classList.add('show');
         }, 1000);
     } else if (cookieConsent === 'accepted') {
-        // Załaduj Google Analytics
         loadGoogleAnalytics();
     }
-    
-    // Akceptacja cookies
+
     acceptBtn.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'accepted');
         cookieBanner.classList.remove('show');
         loadGoogleAnalytics();
-        
-        // Animacja zniknięcia
+
         setTimeout(() => {
             cookieBanner.style.display = 'none';
         }, 400);
     });
-    
-    // Odrzucenie cookies
+
     declineBtn.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'declined');
         cookieBanner.classList.remove('show');
@@ -115,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Funkcja ładująca Google Analytics
+// Load Google Analytics
 const GA_MEASUREMENT_ID = 'G-XTFYMH2EHD';
 
 function loadGoogleAnalytics() {
@@ -137,14 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNav = document.getElementById('mobileNav');
     const closeBtn = document.getElementById('closeBtn');
-    
-    // Utwórz overlay
+
     const overlay = document.createElement('div');
     overlay.className = 'mobile-nav-overlay';
     overlay.id = 'mobileNavOverlay';
     document.body.appendChild(overlay);
-    
-    // Otwórz menu
+
     hamburgerBtn.addEventListener('click', function() {
         hamburgerBtn.classList.add('active');
         mobileNav.classList.add('active');
@@ -153,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'hidden';
     });
 
-    // Zamknij menu
     function closeMenu() {
         hamburgerBtn.classList.remove('active');
         mobileNav.classList.remove('active');
@@ -161,11 +151,10 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburgerBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
-    
+
     closeBtn.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
-    
-    // Zamknij po kliknięciu w link
+
     document.querySelectorAll('.mobile-nav-links a').forEach(link => {
         link.addEventListener('click', closeMenu);
     });
@@ -177,16 +166,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const privacyLinkCookie = document.getElementById('privacyLinkCookie');
     const privacyLinkFooter = document.getElementById('privacyLinkFooter');
     const privacyClose = document.getElementById('privacyClose');
-    
-    // Otwórz modal
+
     function openPrivacyModal(e) {
         e.preventDefault();
         privacyModal.classList.add('show');
         privacyModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
-    
-    // Zamknij modal
+
     function closePrivacyModal() {
         privacyModal.classList.remove('show');
         setTimeout(() => {
@@ -194,28 +181,25 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }, 300);
     }
-    
-    // Event listeners
+
     if (privacyLinkCookie) {
         privacyLinkCookie.addEventListener('click', openPrivacyModal);
     }
-    
+
     if (privacyLinkFooter) {
         privacyLinkFooter.addEventListener('click', openPrivacyModal);
     }
-    
+
     if (privacyClose) {
         privacyClose.addEventListener('click', closePrivacyModal);
     }
-    
-    // Zamknij po kliknięciu poza modal
+
     privacyModal.addEventListener('click', function(e) {
         if (e.target === privacyModal) {
             closePrivacyModal();
         }
     });
-    
-    // Zamknij po ESC
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && privacyModal.classList.contains('show')) {
             closePrivacyModal();
@@ -223,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Image Lightbox (podgląd zdjęć aut)
+// Image Lightbox (car photo preview)
 document.addEventListener('DOMContentLoaded', function() {
     const lightbox = document.getElementById('imageLightbox');
     if (!lightbox) return;
@@ -237,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentImages = [];
     let currentIndex = 0;
     let activeCarousel = null;
+    let triggerElement = null;
 
     function renderCurrentImage() {
         const current = currentImages[currentIndex];
@@ -249,20 +234,21 @@ document.addEventListener('DOMContentLoaded', function() {
         lightboxCounter.textContent = hasMultiple ? `${currentIndex + 1} / ${currentImages.length}` : '';
     }
 
-    function openLightbox(images, startIndex, carouselEl) {
+    function openLightbox(images, startIndex, carouselEl, trigger) {
         currentImages = images;
         currentIndex = startIndex;
         activeCarousel = carouselEl;
+        triggerElement = trigger || null;
         renderCurrentImage();
         lightbox.classList.remove('hiding');
         lightbox.classList.add('show');
         document.body.style.overflow = 'hidden';
+        lightboxClose.focus();
     }
 
     function closeLightbox() {
         if (!lightbox.classList.contains('show')) return;
 
-        // Zostaw karuzelę na zdjęciu, które było ostatnio widoczne w podglądzie
         if (activeCarousel && window.bootstrap) {
             const instance = bootstrap.Carousel.getOrCreateInstance(activeCarousel);
             instance.to(currentIndex);
@@ -276,6 +262,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             lightbox.classList.remove('hiding');
         }, 300);
+
+        if (triggerElement) {
+            triggerElement.focus();
+            triggerElement = null;
+        }
     }
 
     function showNext() {
@@ -288,7 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCurrentImage();
     }
 
-    // Każde zdjęcie auta (pojedyncze lub w karuzeli) otwiera podgląd ze wszystkimi zdjęciami tego auta
     document.querySelectorAll('.car-image').forEach(function(container) {
         const imgs = Array.from(container.querySelectorAll('img'));
         if (!imgs.length) return;
@@ -296,7 +286,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const carouselEl = container.querySelector('.carousel');
 
         imgs.forEach(function(img, index) {
-            img.addEventListener('click', function(e) {
+            img.setAttribute('tabindex', '0');
+            img.setAttribute('role', 'button');
+            img.setAttribute('aria-label', 'Powiększ zdjęcie');
+
+            function trigger(e) {
                 e.stopPropagation();
 
                 let startIndex = index;
@@ -305,7 +299,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     startIndex = Math.max(imgs.indexOf(activeImg), 0);
                 }
 
-                openLightbox(imgs, startIndex, carouselEl);
+                openLightbox(imgs, startIndex, carouselEl, img);
+            }
+
+            img.addEventListener('click', trigger);
+            img.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    trigger(e);
+                }
             });
         });
     });
@@ -334,5 +336,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowRight') showNext();
         if (e.key === 'ArrowLeft') showPrev();
+
+        if (e.key === 'Tab') {
+            const focusable = [lightboxClose, lightboxPrev, lightboxNext].filter(el => el.style.display !== 'none');
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
     });
 });
